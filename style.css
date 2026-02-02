@@ -889,3 +889,265 @@ footer ul a {
     width: 100%;
   }
 }
+
+/* --- Authentication Page Styles --- */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #fff;
+  width: 100%;
+  max-width: 900px;
+  height: 600px; /* Fixed height for desktop */
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Side (Image) */
+.auth-left {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")
+    center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+}
+
+.overlay-auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 86, 179, 0.9),
+    rgba(0, 30, 60, 0.8)
+  );
+}
+
+.auth-content {
+  position: relative;
+  z-index: 2;
+}
+.logo-white {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+.auth-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+.auth-content p {
+  opacity: 0.9;
+}
+
+/* Right Side (Forms) */
+.auth-right {
+  flex: 1;
+  padding: 50px;
+  position: relative;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.auth-form {
+  width: 100%;
+  position: absolute; /* Forms stack on top of each other */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  padding: 0 50px;
+}
+
+.auth-form.active-form {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%); /* Correct centering */
+}
+
+.auth-subtitle {
+  color: #888;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+/* Floating Input Animation */
+.input-wrap {
+  position: relative;
+  margin-bottom: 25px;
+  height: 50px;
+}
+
+.input-field {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-dark);
+  padding-top: 20px; /* Make space for label */
+  transition: 0.3s;
+}
+
+.input-wrap label {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  color: #999;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-wrap i {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+/* Animation Logic: When focused or has value */
+.input-field:focus,
+.input-field:valid {
+  border-bottom-color: var(--primary-color);
+}
+
+.input-field:focus + label,
+.input-field:valid + label {
+  top: -5px;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+/* Form Footer Links */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+  align-items: center;
+}
+.forgot-pass {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.bottom-text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.bottom-text a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Social Login */
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+.divider span {
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 2;
+}
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+}
+
+.social-login {
+  display: flex;
+  gap: 10px;
+}
+.social-login button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.social-login button:hover {
+  background: #f8f9fa;
+}
+.google-btn i {
+  color: #db4437;
+}
+.fb-btn i {
+  color: #4267b2;
+}
+
+/* Responsive Login */
+@media (max-width: 768px) {
+  .auth-box {
+    flex-direction: column;
+    height: auto;
+    max-width: 500px;
+  }
+  .auth-left {
+    padding: 30px;
+    min-height: 200px;
+  }
+  .auth-right {
+    padding: 40px 20px;
+    height: auto;
+    min-height: 500px;
+  }
+  .auth-form {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none !important;
+    padding: 0;
+  }
+  .auth-form.active-form {
+    transform: none;
+  }
+  /* Hide inactive form completely on mobile so height adjusts */
+  .auth-form:not(.active-form) {
+    display: none;
+  }
+}
