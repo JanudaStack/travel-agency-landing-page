@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Jobs - GlobalRecruit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fas fa-globe-americas"></i> Trans Asia</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Jobs</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <a href="#" class="btn-primary">Register Now</a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Browse Available Jobs</h1>
+            <p>Find the perfect role that matches your skills.</p>
+        </div>
+    </header>
+
+    <section class="jobs-layout container">
+
+        <aside class="filter-sidebar">
+            <div class="filter-group">
+                <h3><i class="fas fa-filter"></i> Filter Jobs</h3>
+            </div>
+
+            <div class="filter-group">
+                <label>Search Keywords</label>
+                <div class="input-icon">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Job title, skill...">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Location</label>
+                <select id="locationFilter">
+                    <option value="all">All Countries</option>
+                    <option value="Dubai">Dubai, UAE</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Job Type</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Full Time" checked> Full Time</label>
+                    <label><input type="checkbox" value="Part Time"> Part Time</label>
+                    <label><input type="checkbox" value="Contract"> Contract</label>
+                </div>
+            </div>
+
+            <button class="btn-primary w-100" id="resetBtn">Reset Filters</button>
+        </aside>
+
+        <main class="job-results">
+            <div class="results-header">
+                <span id="jobCount">Showing 6 Jobs</span>
+                <div class="sort-box">
+                    Sort by:
+                    <select>
+                        <option>Newest First</option>
+                        <option>Salary High-Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="jobs-grid-vertical" id="jobContainer">
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&rarr;</a>
+            </div>
+        </main>
+
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Trans Asia</h3>
+                <p>Connecting talent with opportunity globally.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Job Seekers</h4>
+                <ul>
+                    <li><a href="#">Browse Jobs</a></li>
+                    <li><a href="#">Upload Resume</a></li>
+                    <li><a href="#">Job Alerts</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h4>Contact Us</h4>
+                <a href="mailto:abc@mail.com"><i class="fas fa-map-marker-alt"></i> 123 Global Plaza, Colombo</a>
+                <a href="tel:+94 11 234 5678"><i class="fas fa-phone"></i> +94 11 234 5678</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Trans Asia Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="jobs-script.js"></script>
+</body>
+
+</html>
